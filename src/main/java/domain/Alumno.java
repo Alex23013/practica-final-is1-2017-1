@@ -1,6 +1,7 @@
 package domain;
 
 import javax.persistence.*;
+import java.security.PublicKey;
 
 @Entity
 @Table(name = "tbl_alumno")
@@ -16,8 +17,11 @@ public class Alumno implements BaseEntity<Long> {
 	private String apellidoPaterno;
 	@Column(unique = true, nullable = false, updatable = false, length = 64)
 	private String apellidoMaterno;
+    @Column(unique = true, updatable = false, length = 64)
+    private String DNI;
 
-	@Override
+
+    @Override
 	public Long getId() {
 		return id;
 	}
@@ -31,7 +35,15 @@ public class Alumno implements BaseEntity<Long> {
 		return nombres;
 	}
 
-	public void setNombres(String nombres) {
+    public String getDNI() {
+        return DNI;
+    }
+
+    public void setDNI(String DNI) {
+        this.DNI = DNI;
+    }
+
+    public void setNombres(String nombres) {
 		this.nombres = nombres;
 	}
 
@@ -51,4 +63,15 @@ public class Alumno implements BaseEntity<Long> {
 		this.apellidoMaterno = apellidoMaterno;
 	}
 
+	public Alumno(){
+
+    }
+
+    public Alumno(Long id,String nombres, String apellidoM, String apellidoP, String DNI ){
+	    this.id = id;
+	    this.nombres = nombres;
+	    this.apellidoMaterno = apellidoM;
+	    this.apellidoPaterno = apellidoP;
+	    this.DNI = DNI;
+    }
 }

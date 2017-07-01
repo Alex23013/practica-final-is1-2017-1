@@ -66,4 +66,14 @@ public class Matricula implements BaseEntity<Long> {
 		this.semestre = semestre;
 	}
 
+
+	public Matricula(){}
+
+	public Matricula(Long id, Alumno alumno, Curso curso, Double nota, String semestre){
+		this.id = id;
+		this.alumno = alumno;
+		this.curso = curso;
+		this.nota = nota;
+		this.semestre = semestre;
+	}
 }
