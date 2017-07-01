@@ -2,6 +2,7 @@ package domain;
 
 public class Alumno implements BaseEntity<Long> {
 	private Long id;
+	//commit de prueba xD
 
 	private String nombres;
 	
