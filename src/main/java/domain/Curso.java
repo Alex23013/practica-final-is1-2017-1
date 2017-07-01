@@ -1,6 +1,7 @@
 package domain;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 @Entity
 @Table(name = "tbl_curso")
@@ -12,6 +13,9 @@ public class Curso implements BaseEntity<Long> {
 
     @Column(unique = true, updatable = false, length = 64)
 	private String codigo;
+
+    @Column(unique = true, updatable = false, length = 64)
+    private String DNI;
 
     @Column(unique = true, nullable = false, updatable = false, length = 64)
 	private String nombre;
@@ -68,4 +72,24 @@ public class Curso implements BaseEntity<Long> {
 		this.prerequisitos = prerequisitos;
 	}
 
+    public String getDNI() {
+        return DNI;
+    }
+
+    public void setDNI(String DNI) {
+        this.DNI = DNI;
+    }
+
+    public Curso(){
+        prerequisitos = new ArrayList<Curso>();
+    }
+
+    public Curso(Long id,String nombre, String codigo,String DNI, Integer creditos, List<Curso> prerequisitos){
+        this.id = id;
+	    this.nombre = nombre;
+	    this.codigo = codigo;
+	    this.DNI = DNI;
+	    this.creditos = creditos;
+	    this.prerequisitos = prerequisitos;
+    }
 }
