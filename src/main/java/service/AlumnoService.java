@@ -8,7 +8,7 @@ import repository.AlumnoRepository;
 /**
  * Created by Maria on 01/07/2017.
  */
-@Service
+//@Service
 public class AlumnoService {
     @Autowired
     AlumnoRepository alumnoRepository;

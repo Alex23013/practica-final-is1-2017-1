@@ -1,5 +1,6 @@
 package repository;
 
+import domain.Alumno;
 import domain.Curso;
 import domain.Matricula;
 import org.springframework.data.jpa.repository.Query;
@@ -20,4 +21,7 @@ public interface MatriculaRepository extends CrudRepository<Matricula, Long>{
     @Query("select a.alumno , a.nota  from Matricula a where a.curso=?1 and a.semestre=?2")
     Collection<Matricula> findByCursoAndSemestre(Curso curso, String semestre);
 
+    //*Ver si un Alumno esta matriculado en un curso
+    @Query("select a  from Matricula a where a.alumno = ?1 and a.curso =?2")
+    Collection<Matricula> findAlumno(Alumno alumno, Curso curso);
 }

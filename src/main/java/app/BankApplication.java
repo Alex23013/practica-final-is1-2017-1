@@ -16,6 +16,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @EnableAutoConfiguration
 @EnableWebMvc
 @EntityScan(basePackageClasses=BaseEntity.class)
+//@SpringBootApplication
 public class BankApplication {
 
 	public static void main(String[] args) throws Exception {

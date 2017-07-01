@@ -67,8 +67,8 @@ public class Alumno implements BaseEntity<Long> {
 
     }
 
-    public Alumno(Long id,String nombres, String apellidoM, String apellidoP, String DNI ){
-	    this.id = id;
+    public Alumno(String nombres, String apellidoM, String apellidoP, String DNI ){
+
 	    this.nombres = nombres;
 	    this.apellidoMaterno = apellidoM;
 	    this.apellidoPaterno = apellidoP;

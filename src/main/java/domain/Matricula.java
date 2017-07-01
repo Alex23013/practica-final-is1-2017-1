@@ -69,8 +69,8 @@ public class Matricula implements BaseEntity<Long> {
 
 	public Matricula(){}
 
-	public Matricula(Long id, Alumno alumno, Curso curso, Double nota, String semestre){
-		this.id = id;
+	public Matricula( Alumno alumno, Curso curso, Double nota, String semestre){
+
 		this.alumno = alumno;
 		this.curso = curso;
 		this.nota = nota;

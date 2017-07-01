@@ -14,7 +14,7 @@ import service.AlumnoService;
  */
 @Controller
 public class AlumnoController {
-    @Autowired
+   // @Autowired
     AlumnoService alumnoService;
 
     @RequestMapping(value ="/alumnoByApellidoP", method = RequestMethod.GET)

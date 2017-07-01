@@ -75,8 +75,8 @@ public class Curso implements BaseEntity<Long> {
         prerequisitos = new ArrayList<Curso>();
     }
 
-    public Curso(Long id,String nombre, String codigo, Integer creditos, List<Curso> prerequisitos){
-        this.id = id;
+    public Curso(String nombre, String codigo, Integer creditos, List<Curso> prerequisitos){
+
 	    this.nombre = nombre;
 	    this.codigo = codigo;
 
