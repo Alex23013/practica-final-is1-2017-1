@@ -1,14 +1,27 @@
 package domain;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "tbl_matricula")
 public class Matricula implements BaseEntity<Long> {
+	@Id
+	@SequenceGenerator(name = "id_generator", sequenceName = "id_seq", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_generator")
 	private Long id;
 
+	@ManyToOne
+	@JoinColumn(name="curso_id")
 	private Curso curso;
 
+	@ManyToOne
+	@JoinColumn(name="alumno_id")
 	private Alumno alumno;
 
+	@Column(nullable = false)
 	private Double nota;
 
+	@Column(unique = true, nullable = false, updatable = false, length = 64)
 	private String semestre;
 
 	@Override

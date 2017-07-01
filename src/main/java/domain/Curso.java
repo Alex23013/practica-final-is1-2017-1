@@ -1,16 +1,29 @@
 package domain;
 
+import javax.persistence.*;
 import java.util.List;
-
+@Entity
+@Table(name = "tbl_curso")
 public class Curso implements BaseEntity<Long> {
+    @Id
+    @SequenceGenerator(name = "id_generator", sequenceName = "id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_generator")
 	private Long id;
 
+    @Column(unique = true, nullable = false, updatable = false, length = 64)
 	private String codigo;
 
+    @Column(unique = true, nullable = false, updatable = false, length = 64)
 	private String nombre;
 
+    @Column(nullable = false)
 	private Integer creditos;
 
+    @ManyToMany
+    @JoinTable(
+            name="prerequisitos",
+            joinColumns=@JoinColumn(name="id1", referencedColumnName="id"),
+            inverseJoinColumns=@JoinColumn(name="id2", referencedColumnName="id"))
 	private List<Curso> prerequisitos;
 
 	@Override

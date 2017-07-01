@@ -1,13 +1,20 @@
 package domain;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "tbl_alumno")
 public class Alumno implements BaseEntity<Long> {
+	@Id
+	@SequenceGenerator(name = "id_generator", sequenceName = "id_seq", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_generator")
 	private Long id;
-	//commit de prueba xD
 
+	@Column(unique = true, nullable = false, updatable = false, length = 64)
 	private String nombres;
-	
+	@Column(unique = true, nullable = false, updatable = false, length = 64)
 	private String apellidoPaterno;
-
+	@Column(unique = true, nullable = false, updatable = false, length = 64)
 	private String apellidoMaterno;
 
 	@Override
