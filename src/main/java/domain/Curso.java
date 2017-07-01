@@ -10,7 +10,7 @@ public class Curso implements BaseEntity<Long> {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_generator")
 	private Long id;
 
-    @Column(unique = true, nullable = false, updatable = false, length = 64)
+    @Column(unique = true, updatable = false, length = 64)
 	private String codigo;
 
     @Column(unique = true, nullable = false, updatable = false, length = 64)
