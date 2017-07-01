@@ -17,7 +17,7 @@ import java.util.Collection;
 @Controller
 public class CursoController {
 
-   // @Autowired
+    //@Autowired
     CursoService cursoService = new CursoService();
 
     @RequestMapping(value = "/cursos", method = RequestMethod.GET)
@@ -28,9 +28,16 @@ public class CursoController {
 
     @RequestMapping(value ="/cursoByCodigo", method = RequestMethod.GET)
     @ResponseBody
-    public Curso CursoByCodigo(@RequestParam String idT){
-        return cursoService.findCursoByCodigo(idT);
+    public Curso CursoByCodigo(@RequestParam String codigo){
+        return cursoService.findCursoByCodigo(codigo);
     }
+
+    @RequestMapping(value ="/cursoByNombre", method = RequestMethod.GET)
+    @ResponseBody
+    public Curso CursoByNombre(@RequestParam String nombre){
+        return cursoService.findCursoByNombrePart(nombre);
+    }
+
     @RequestMapping(value ="/a", method = RequestMethod.GET)
     @ResponseBody
     public String Ccc(){

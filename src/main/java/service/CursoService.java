@@ -2,6 +2,7 @@ package service;
 
 import domain.Curso;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import repository.CursoRepository;
 
 import java.util.Collection;
@@ -9,6 +10,7 @@ import java.util.Collection;
 /**
  * Created by Maria on 01/07/2017.
  */
+//@Service
 public class CursoService {
 
     @Autowired
